@@ -3,6 +3,7 @@ package com.example.activity101;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
     String tag = "Lifecycle Step";
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         Log.d(tag, "In the onCreate() event");
     }
 
