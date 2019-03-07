@@ -1,23 +1,36 @@
 package com.example.activity101;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
-//import android.util.Log;
-import android.view.Window;
+import android.app.ProgressDialog;
+import android.os.Bundle;
+import android.os.CountDownTimer;
 
-public class MainActivity extends AppCompatActivity {
-    //String tag = "Lifecycle Step";
-
+public class MainActivity extends Activity {
+    ProgressDialog progressDialog;
     @Override
-    protected void onCreate ( Bundle savedInstanceState)
-    {
+    protected void onCreate ( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //Log.d(tag, "In the onCreate() event");
     }
+    public void onStart (){
+        super.onStart();
+        progressDialog = ProgressDialog.show(this,
+                "Please Wait", "Processing...",
+                true) ;
+        CountDownTimer timer = new CountDownTimer(
+                15000, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
 
+            }
+
+            @Override
+            public void onFinish() {
+                progressDialog.dismiss();
+            }
+        }.start();
+    }
     /*public void onStart ()
     {
         super.onStart();
