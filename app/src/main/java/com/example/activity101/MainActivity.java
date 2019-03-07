@@ -2,22 +2,23 @@ package com.example.activity101;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+//import android.util.Log;
 import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
-    String tag = "Lifecycle Step";
+    //String tag = "Lifecycle Step";
 
     @Override
     protected void onCreate ( Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        Log.d(tag, "In the onCreate() event");
+        //Log.d(tag, "In the onCreate() event");
     }
 
-    public void onStart ()
+    /*public void onStart ()
     {
         super.onStart();
         Log.d(tag, "In the onStart() event");
@@ -52,5 +53,5 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         Log.d(tag, "In the onDestroy() event");
     }
-
+*/
 }
